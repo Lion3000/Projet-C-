@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ClasseMetier
 {
-    class ListJoueur
+    public class ListeJoueur : List<Joueur>, IComparer<Joueur>
     {
+        public int Compare(Joueur x, Joueur y)
+        {
+            return x.CompareTo(y);
+        }
     }
 }
