@@ -22,7 +22,7 @@ namespace ClasseMetier
         public uint NombreMystere { get => nombreMystere; set => nombreMystere = value; }
         public uint NbPropositions { get => nbPropositions; set => nbPropositions = value; }
 
-        public void genererNombreMystere()
+        private void genererNombreMystere()
         {
             Random random = new Random();      
             this.NombreMystere = (uint)random.Next(1, 1000);
