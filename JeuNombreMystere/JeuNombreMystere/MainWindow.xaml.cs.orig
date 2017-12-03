@@ -22,19 +22,26 @@ namespace JeuNombreMystere
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        private ListeJoueur listJoueur;
+<<<<<<< HEAD
+         private ListeJoueur listJoueur;
         UcGererJoueurs gererJoueurs;
         UcGererPartie gererPartie;
-  
+=======
+        private ListeJoueur listeJoueur;
+>>>>>>> 65f9bd9db39f50fa03e9aedd529995e0dc4379db
         public MainWindow()
         {
             this.listeJoueur = new ListeJoueur();
             this.listeJoueur.load();
             InitializeComponent();
+            listJoueur = new ListeJoueur();
             gererJoueurs = new UcGererJoueurs(listJoueur);            
         }
+<<<<<<< HEAD
+        
+=======
 
+>>>>>>> 65f9bd9db39f50fa03e9aedd529995e0dc4379db
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
