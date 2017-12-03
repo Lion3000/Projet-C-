@@ -20,6 +20,15 @@ namespace ClasseMetier
             Score = score;
         }
 
+        public Joueur()
+        {
+            Nom = "";
+            Login = "";
+            NbPartiesJouees = 0;
+            MeilleurScore = 0;
+            Score = 0;
+        }
+
         public string Nom { get => nom; set => nom = value; }
         public string Login { get => login; set => login = value; }
         public uint NbPartiesJouees { get => nbPartiesJouees; set => nbPartiesJouees = value; }
