@@ -2,7 +2,6 @@
 using System.Windows;
 using ClasseMetier;
 
-
 namespace JeuNombreMystere
 {
     /// <summary>
@@ -14,6 +13,7 @@ namespace JeuNombreMystere
         private ListeJoueur listeJoueur;
         private UcGestionJoueurs.UcGererJoueurs gererJoueurs;
         private UcAfficherListeScores.UcAfficherListeScores afficherListeScores;
+        private UcGestionPartie.UcGererPartie ucGererPartie;
 
         public ListeJoueur ListeJoueur { get => listeJoueur; set => listeJoueur = value; }
 
@@ -40,9 +40,16 @@ namespace JeuNombreMystere
 
         private void Demarrer_Click(object sender, RoutedEventArgs e)
         {
-            
+            UcGestionPartie.FenetreIdentification fenetreIdentification = new UcGestionPartie.FenetreIdentification(this.listeJoueur);
+            fenetreIdentification.Owner = this;
+            fenetreIdentification.Show();
         }
-
+        public void LancerPartie(UcGestionPartie.FenetreIdentification fenetreIdentification, Joueur joueur)
+        {
+            fenetreIdentification.Close();
+            ucGererPartie = new UcGestionPartie.UcGererPartie(joueur);
+            this.ucGererPartie.demarrerPartie();
+        }
         private void visualiserJoueur_Click(object sender, RoutedEventArgs e)
         {
             this.gererJoueurs.visualiserJoueur(this);

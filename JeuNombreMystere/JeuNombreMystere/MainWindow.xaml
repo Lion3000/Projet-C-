@@ -35,7 +35,7 @@
                 </MenuItem >
             </MenuItem>
             <MenuItem Header="_Gestion Partie">
-                <MenuItem Name="Demarrer" Header="_Démarrer" InputGestureText="Ctrl+N" IsEnabled="False" Click="Demarrer_Click">
+                <MenuItem Name="Demarrer" Header="_Démarrer" InputGestureText="Ctrl+N" IsEnabled="True" Click="Demarrer_Click">
                     <MenuItem.Icon>
                         <Image Source="Resources/demarrer.png" Height="20" Width="20"/>
                     </MenuItem.Icon>

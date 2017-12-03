@@ -81,6 +81,18 @@
       <DependentUpon>FenetreVisualisationDesJoueurs.xaml</DependentUpon>
     </Compile>
     <Compile Include="UcGestionJoueurs\UcGererJoueurs.cs" />
+    <Compile Include="UcGestionPartie\FenetreIdentification.xaml.cs">
+      <DependentUpon>FenetreIdentification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UcGestionPartie\FenetrePartie.xaml.cs">
+      <DependentUpon>FenetrePartie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UcGestionPartie\FenetreVictoire.xaml.cs">
+      <DependentUpon>FenetreVictoire.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UcGestionPartie\UcGererPartie.cs" />
+    <Compile Include="UcGestionPartie\UcIdentifier.cs" />
+    <Compile Include="UcGestionPartie\VictoireEventArgs.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -102,6 +114,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UcGestionJoueurs\FenetreVisualisationDesJoueurs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UcGestionPartie\FenetreIdentification.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UcGestionPartie\FenetrePartie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UcGestionPartie\FenetreVictoire.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

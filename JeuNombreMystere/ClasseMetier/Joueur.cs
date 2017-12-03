@@ -29,6 +29,18 @@ namespace ClasseMetier
             Score = 0;
         }
 
+        public override bool Equals(Object obj)
+        {
+            // Check for null values and compare run-time types.
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+            Joueur joueur = (Joueur)obj;
+            if (this.Login == joueur.Login && this.nom == joueur.nom)
+                return true;
+            else
+                return false;
+        }
+
         public string Nom { get => nom; set => nom = value; }
         public string Login { get => login; set => login = value; }
         public uint NbPartiesJouees { get => nbPartiesJouees; set => nbPartiesJouees = value; }
