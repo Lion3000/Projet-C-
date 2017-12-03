@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Joueur.cs" />
-    <Compile Include="ListJoueur.cs" />
+    <Compile Include="ListeJoueur.cs" />
     <Compile Include="Partie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
