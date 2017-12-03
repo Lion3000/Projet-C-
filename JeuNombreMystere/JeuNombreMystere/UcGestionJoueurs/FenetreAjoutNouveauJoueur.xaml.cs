@@ -20,18 +20,17 @@ namespace JeuNombreMystere.UcGestionJoueurs
     /// </summary>
     public partial class FenetreAjoutNouveauJoueur : Window
     {
-        private ListeJoueur listeJoueurs;
-        public FenetreAjoutNouveauJoueur(ListeJoueur listeJoueurs)
+        public FenetreAjoutNouveauJoueur()
         {
-            this.listeJoueurs = listeJoueurs;
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(Login.Text != "" && Nom.Text != "")
+            MainWindow w = (MainWindow)Owner;
+            if (Login.Text != "" && Nom.Text != "")
             {
-                this.listeJoueurs.Add(new Joueur(Nom.Text, Login.Text));
+                w.ListeJoueur.Add(new Joueur(Nom.Text, Login.Text));
                 MessageBox.Show("Joueur " + Nom.Text + " " + Login.Text + " ajouté !", "Confirmation", MessageBoxButton.OK, MessageBoxImage.Question);
                 this.Close();
             }
@@ -39,7 +38,6 @@ namespace JeuNombreMystere.UcGestionJoueurs
             {
                 MessageBox.Show("Formulaire incomplet, veuillez réessayer", "Retry", MessageBoxButton.OK, MessageBoxImage.Question);
             }
-
         }
     }
 }

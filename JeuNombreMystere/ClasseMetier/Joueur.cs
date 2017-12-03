@@ -37,7 +37,7 @@ namespace ClasseMetier
 
         public int CompareTo(Joueur other)
         {
-            return this.Score.CompareTo(other.Score);
+            return this.MeilleurScore.CompareTo(other.MeilleurScore);
         }
     }
 }

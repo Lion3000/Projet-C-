@@ -9,21 +9,18 @@ namespace JeuNombreMystere.UcGestionJoueurs
 {
     public class UcGererJoueurs
     {
-        private ListeJoueur listeJoueurs;
-        public UcGererJoueurs(ListeJoueur listeJoueurs)
-        {
-            this.listeJoueurs = listeJoueurs;
-        }
 
-        public void visualiserJoueur()
+        public void visualiserJoueur(MainWindow mainWindow)
         {
-            FenetreVisualisationDesJoueurs fenetreListeDesJoueurs = new FenetreVisualisationDesJoueurs(this.listeJoueurs);
+            FenetreVisualisationDesJoueurs fenetreListeDesJoueurs = new FenetreVisualisationDesJoueurs();
+            fenetreListeDesJoueurs.Owner = mainWindow;
             fenetreListeDesJoueurs.Show();
         }
 
-        public void ajouterJoueur()
+        public void ajouterJoueur(MainWindow mainWindow)
         {
-            FenetreAjoutNouveauJoueur fenetreAjoutNouveauJoueur = new FenetreAjoutNouveauJoueur(this.listeJoueurs);
+            FenetreAjoutNouveauJoueur fenetreAjoutNouveauJoueur = new FenetreAjoutNouveauJoueur();
+            fenetreAjoutNouveauJoueur.Owner = mainWindow;
             fenetreAjoutNouveauJoueur.Show();
         }
     }

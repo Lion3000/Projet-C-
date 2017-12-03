@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JeuNombreMystere.UcGestionJoueurs"
         mc:Ignorable="d"
-        Title="Visualisation" Height="300" Width="300">
+        Title="Visualisation" Height="300" Width="300" Loaded="Window_Loaded">
     <StackPanel>
         <Label Content="LISTE DES JOUEURS" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="25, 25, 25, 25"/>
         <ListBox Name="listJoueurs" VerticalAlignment="Top" DockPanel.Dock="Right" Height="182"  Margin="10,0,9.6,0">

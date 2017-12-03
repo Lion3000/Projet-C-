@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 using ClasseMetier;
-using JeuNombreMystere.UcGestionJoueurs;
+
 
 namespace JeuNombreMystere
 {
@@ -12,25 +12,30 @@ namespace JeuNombreMystere
     {
 
         private ListeJoueur listeJoueur;
-        UcGererJoueurs gererJoueurs;
-  
+        private UcGestionJoueurs.UcGererJoueurs gererJoueurs;
+        private UcAfficherListeScores.UcAfficherListeScores afficherListeScores;
+
+        public ListeJoueur ListeJoueur { get => listeJoueur; set => listeJoueur = value; }
+
         public MainWindow()
         {
-            this.listeJoueur = new ListeJoueur();
-            this.listeJoueur.load();
+            this.ListeJoueur = new ListeJoueur();
+            this.ListeJoueur.load();
+
             InitializeComponent();
-            this.gererJoueurs = new UcGererJoueurs(this.listeJoueur);            
+            this.gererJoueurs = new UcGestionJoueurs.UcGererJoueurs();
+            this.afficherListeScores = new UcAfficherListeScores.UcAfficherListeScores();
         }
 
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
-            this.listeJoueur.save();
+            this.ListeJoueur.save();
         }
 
         private void nouveauJoueur_Click(object sender, RoutedEventArgs e)
         {
-            this.gererJoueurs.ajouterJoueur();
+            this.gererJoueurs.ajouterJoueur(this);
         }
 
         private void Demarrer_Click(object sender, RoutedEventArgs e)
@@ -40,7 +45,7 @@ namespace JeuNombreMystere
 
         private void visualiserJoueur_Click(object sender, RoutedEventArgs e)
         {
-            this.gererJoueurs.visualiserJoueur();
+            this.gererJoueurs.visualiserJoueur(this);
         }
 
         private void quitter_Click(object sender, RoutedEventArgs e)
@@ -50,7 +55,7 @@ namespace JeuNombreMystere
 
         private void tableauScore_Click(object sender, RoutedEventArgs e)
         {
-
+            afficherListeScores.doIt(this);
         }
     }
 }

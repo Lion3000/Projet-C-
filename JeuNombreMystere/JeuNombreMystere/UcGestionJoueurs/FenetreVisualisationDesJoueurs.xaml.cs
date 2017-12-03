@@ -20,10 +20,15 @@ namespace JeuNombreMystere.UcGestionJoueurs
     /// </summary>
     public partial class FenetreVisualisationDesJoueurs : Window
     {
-        public FenetreVisualisationDesJoueurs(ListeJoueur listeJoueur)
+        public FenetreVisualisationDesJoueurs()
         {
-            InitializeComponent();
-            listJoueurs.ItemsSource = listeJoueur;
+            InitializeComponent(); 
         }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            MainWindow w = (MainWindow)Owner;
+            listJoueurs.ItemsSource = w.ListeJoueur;
+        }
+
     }
 }

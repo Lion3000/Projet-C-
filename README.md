@@ -10,8 +10,8 @@ nombre de coups de la partie est inférieur au score précédent, il devient le 
 
 ## Bonus
 
-
-
+* **Tableau des meilleurs scores** 
+* **Persistance des données en xml** 
 
 ## Auteurs
 
