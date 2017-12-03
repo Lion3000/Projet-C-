@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using ClasseMetier;
 using JeuNombreMystere.UcGestionJoueurs;
 
@@ -23,16 +11,15 @@ namespace JeuNombreMystere
     public partial class MainWindow : Window
     {
 
-        private ListeJoueur listJoueur;
+        private ListeJoueur listeJoueur;
         UcGererJoueurs gererJoueurs;
-        UcGererPartie gererPartie;
   
         public MainWindow()
         {
             this.listeJoueur = new ListeJoueur();
             this.listeJoueur.load();
             InitializeComponent();
-            gererJoueurs = new UcGererJoueurs(listJoueur);            
+            this.gererJoueurs = new UcGererJoueurs(this.listeJoueur);            
         }
 
         protected override void OnClosed(EventArgs e)
