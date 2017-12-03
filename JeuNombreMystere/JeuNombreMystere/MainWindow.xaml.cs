@@ -21,19 +21,18 @@ namespace JeuNombreMystere
     /// </summary>
     public partial class MainWindow : Window
     {
-        // private ListJoueur listJoueur;
+        private ListeJoueur listeJoueur;
         public MainWindow()
         {
-            //this.listJoueur.load();
+            this.listeJoueur = new ListeJoueur();
+            this.listeJoueur.load();
             InitializeComponent();
         }
-
-
 
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
-            //this.listJoueur.load();
+            this.listeJoueur.save();
         }
     }
 }
