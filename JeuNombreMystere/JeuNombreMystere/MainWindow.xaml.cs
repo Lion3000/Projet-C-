@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ClasseMetier;
+using JeuNombreMystere.UcGestionJoueurs;
 
 namespace JeuNombreMystere
 {
@@ -21,19 +22,24 @@ namespace JeuNombreMystere
     /// </summary>
     public partial class MainWindow : Window
     {
-        // private ListJoueur listJoueur;
+         private ListeJoueur listJoueur;
+        UcGererJoueurs gererJoueurs;
         public MainWindow()
         {
             //this.listJoueur.load();
             InitializeComponent();
+            gererJoueurs = new UcGererJoueurs(listJoueur);
         }
-
-
-
+        
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
             //this.listJoueur.load();
+        }
+
+        private void nouveauJoueur_Click(object sender, RoutedEventArgs e)
+        {
+            this.gererJoueurs.ajouterJoueur();
         }
     }
 }

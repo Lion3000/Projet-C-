@@ -9,26 +9,26 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_Menu">
-                <MenuItem Header="_Tableau des scores" InputGestureText="Ctrl+S" IsEnabled="False">
+                <MenuItem Header="_Tableau des scores" Name="tableauScore" InputGestureText="Ctrl+S" IsEnabled="False">
                     <!--<MenuItem.Icon>
                         <Image Source="/Imagenes/database-process-icon.png" Height="20" Width="20"/>
                     </MenuItem.Icon>-->
                 </MenuItem >
                 <Separator />
-                <MenuItem Header="_Quitter">
+                <MenuItem Name="quitter" Header="_Quitter">
                     <!--<MenuItem.Icon>
                         <Image Source="/Imagenes/database-process-icon.png" Height="20" Width="20"/>
                     </MenuItem.Icon>-->
                 </MenuItem >
             </MenuItem>
-            <MenuItem Header="_Gestion Joueur">
-                <MenuItem Header="_Nouveau Joueur" InputGestureText="Ctrl+N" >
+            <MenuItem Name="gestionJoueurs" Header="_Gestion Joueur">
+                <MenuItem Name="nouveauJoueur" Header="_Nouveau Joueur" InputGestureText="Ctrl+N" Click="nouveauJoueur_Click" >
                     <!--<MenuItem.Icon>
                         <Image Source="/Imagenes/database-process-icon.png" Height="20" Width="20"/>
                     </MenuItem.Icon>-->
                 </MenuItem >
                 <Separator />
-                <MenuItem Header="_Visualiser Joueur" IsEnabled="False">
+                <MenuItem Name="visualiserJoueur" Header="_Visualiser Joueur" IsEnabled="False">
                     <!--<MenuItem.Icon>
                         <Image Source="/Imagenes/database-process-icon.png" Height="20" Width="20"/>
                     </MenuItem.Icon>-->
