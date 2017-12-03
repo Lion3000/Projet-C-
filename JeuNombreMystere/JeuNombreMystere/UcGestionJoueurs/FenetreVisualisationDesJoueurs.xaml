@@ -8,6 +8,6 @@
         Title="Visualisation" Height="300" Width="300">
         <StackPanel>
             <Label Content="LISTE DES JOUEURS" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="25, 25, 25, 25"/>
-            <ListBox Name="Joueurs" VerticalAlignment="Top" DockPanel.Dock="Right" Width="250" Height="100" ItemsSource="{Binding ElementName=joueurs, Path=Items, Mode=OneWay}"/>
+        <ListBox Name="Joueurs" VerticalAlignment="Top" DockPanel.Dock="Right" Width="250" Height="100" ItemsSource="{Binding ElementName=listeJoueurs, Path=Items, Mode=OneWay}"/>
         </StackPanel>
 </Window>

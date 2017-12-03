@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClasseMetier;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +20,10 @@ namespace JeuNombreMystere.UcGestionJoueurs
     /// </summary>
     public partial class FenetreVisualisationDesJoueurs : Window
     {
-        public FenetreVisualisationDesJoueurs()
+        private ListeJoueur listeJoueurs;
+        public FenetreVisualisationDesJoueurs(ListeJoueur listeJoueur)
         {
+            this.listeJoueurs = listeJoueur;
             InitializeComponent();
         }
     }

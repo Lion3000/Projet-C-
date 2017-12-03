@@ -17,14 +17,14 @@ namespace JeuNombreMystere.UcGestionJoueurs
 
         public void visualiserJoueur()
         {
-            FenetreVisualisationDesJoueurs fenetreListeDesJoueurs = new FenetreVisualisationDesJoueurs();
+            FenetreVisualisationDesJoueurs fenetreListeDesJoueurs = new FenetreVisualisationDesJoueurs(this.listeJoueurs);
             fenetreListeDesJoueurs.Show();
         }
 
         public void ajouterJoueur()
         {
-            FenetreAjoutNouveauJoueur FenetreAjoutNouveauJoueur = new FenetreAjoutNouveauJoueur(this.listeJoueurs);
-            ajouterJoueur.Show();
+            FenetreAjoutNouveauJoueur fenetreAjoutNouveauJoueur = new FenetreAjoutNouveauJoueur(this.listeJoueurs);
+            fenetreAjoutNouveauJoueur.Show();
         }
     }
 }

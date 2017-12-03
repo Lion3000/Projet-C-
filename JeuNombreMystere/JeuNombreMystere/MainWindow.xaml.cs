@@ -24,11 +24,13 @@ namespace JeuNombreMystere
     {
          private ListeJoueur listJoueur;
         UcGererJoueurs gererJoueurs;
+        UcGererPartie gererPartie;
         public MainWindow()
         {
             //this.listJoueur.load();
             InitializeComponent();
-            gererJoueurs = new UcGererJoueurs(listJoueur);
+            listJoueur = new ListeJoueur();
+            gererJoueurs = new UcGererJoueurs(listJoueur);            
         }
         
         protected override void OnClosed(EventArgs e)
@@ -40,6 +42,16 @@ namespace JeuNombreMystere
         private void nouveauJoueur_Click(object sender, RoutedEventArgs e)
         {
             this.gererJoueurs.ajouterJoueur();
+        }
+
+        private void Demarrer_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void visualiserJoueur_Click(object sender, RoutedEventArgs e)
+        {
+            this.gererJoueurs.visualiserJoueur();
         }
     }
 }

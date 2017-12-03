@@ -33,6 +33,7 @@ namespace JeuNombreMystere.UcGestionJoueurs
             {
                 this.listeJoueurs.Add(new Joueur(Nom.Text, Login.Text));
                 MessageBox.Show("Joueur " + Nom.Text + " " + Login.Text + " ajouté !", "Confirmation", MessageBoxButton.OK, MessageBoxImage.Question);
+                this.Close();
             }
             else
             {
