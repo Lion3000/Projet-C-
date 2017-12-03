@@ -42,5 +42,15 @@ namespace JeuNombreMystere
         {
             this.gererJoueurs.visualiserJoueur();
         }
+
+        private void quitter_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tableauScore_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -9,13 +9,13 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_Menu">
-                <MenuItem Header="_Tableau des scores" Name="tableauScore" InputGestureText="Ctrl+S" IsEnabled="False">
+                <MenuItem Header="_Tableau des scores" Name="tableauScore" InputGestureText="Ctrl+S" IsEnabled="true" Click="tableauScore_Click">
                     <!--<MenuItem.Icon>
                         <Image Source="/Imagenes/database-process-icon.png" Height="20" Width="20"/>
                     </MenuItem.Icon>-->
                 </MenuItem >
                 <Separator />
-                <MenuItem Name="quitter" Header="_Quitter">
+                <MenuItem Name="quitter" Header="_Quitter" Click="quitter_Click">
                     <!--<MenuItem.Icon>
                         <Image Source="/Imagenes/database-process-icon.png" Height="20" Width="20"/>
                     </MenuItem.Icon>-->
