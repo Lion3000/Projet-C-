@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JeuNombreMystere"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="Jeu Nombre Mystère" Height="auto" Width="auto">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Menu">
+                <MenuItem Header="_Tableau des scores" InputGestureText="Ctrl+S" IsEnabled="False">
+                    <!--<MenuItem.Icon>
+                        <Image Source="/Imagenes/database-process-icon.png" Height="20" Width="20"/>
+                    </MenuItem.Icon>-->
+                </MenuItem >
+                <Separator />
+                <MenuItem Header="_Quitter">
+                    <!--<MenuItem.Icon>
+                        <Image Source="/Imagenes/database-process-icon.png" Height="20" Width="20"/>
+                    </MenuItem.Icon>-->
+                </MenuItem >
+            </MenuItem>
+            <MenuItem Header="_Gestion Joueur">
+                <MenuItem Header="_Nouveau Joueur" InputGestureText="Ctrl+N" >
+                    <!--<MenuItem.Icon>
+                        <Image Source="/Imagenes/database-process-icon.png" Height="20" Width="20"/>
+                    </MenuItem.Icon>-->
+                </MenuItem >
+                <Separator />
+                <MenuItem Header="_Visualiser Joueur" IsEnabled="False">
+                    <!--<MenuItem.Icon>
+                        <Image Source="/Imagenes/database-process-icon.png" Height="20" Width="20"/>
+                    </MenuItem.Icon>-->
+                </MenuItem >
+            </MenuItem>
+            <MenuItem Header="_Gestion Partie">
+                <MenuItem Header="_Démarrer" InputGestureText="Ctrl+N" IsEnabled="False">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/demarrer.png" Height="20" Width="20"/>
+                    </MenuItem.Icon>
+                </MenuItem >
+            </MenuItem>
+        </Menu>
+        <TextBox AcceptsReturn="True" />
+    </DockPanel>
 </Window>
