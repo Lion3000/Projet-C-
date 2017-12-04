@@ -20,9 +20,10 @@ namespace JeuNombreMystere
         public MainWindow()
         {
             this.ListeJoueur = new ListeJoueur();
-            this.ListeJoueur.load();
-
             InitializeComponent();
+            this.subscribe(this.ListeJoueur);
+            this.ListeJoueur.load();            
+           
             this.gererJoueurs = new UcGestionJoueurs.UcGererJoueurs();
             this.afficherListeScores = new UcAfficherListeScores.UcAfficherListeScores();
         }
@@ -63,6 +64,16 @@ namespace JeuNombreMystere
         private void tableauScore_Click(object sender, RoutedEventArgs e)
         {
             afficherListeScores.doIt(this);
+        }
+        public void subscribe(ListeJoueur listeJoueur)
+        {
+            listeJoueur.notEmpty += new ListeJoueur.NotEmptyHandler(onListeJoueurNotEmpty);
+        }
+        public void onListeJoueurNotEmpty(object sender, ListeJoueursIsNotEmptyEventArgs e)
+        {
+            tableauScore.IsEnabled = true;
+            Demarrer.IsEnabled = true;
+            visualiserJoueur.IsEnabled = true;
         }
     }
 }

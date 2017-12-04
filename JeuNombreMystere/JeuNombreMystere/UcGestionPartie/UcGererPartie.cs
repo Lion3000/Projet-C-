@@ -29,6 +29,7 @@ namespace JeuNombreMystere.UcGestionPartie
         public void onVictoire(object sender, VictoireEventArgs e)
         {
             this.partie.Joueur.NbPartiesJouees++;
+            this.partie.Joueur.Score = this.partie.NbPropositions;
             fenetrePartie.Close();
             FenetreVictoire fenetreVictoire = new FenetreVictoire(this.partie);
             fenetreVictoire.Show();

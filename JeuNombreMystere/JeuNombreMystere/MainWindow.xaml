@@ -9,7 +9,7 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_Menu">
-                <MenuItem Header="_Tableau des scores" Name="tableauScore" InputGestureText="Ctrl+S" IsEnabled="true" Click="tableauScore_Click">
+                <MenuItem Header="_Tableau des scores" Name="tableauScore" InputGestureText="Ctrl+S" IsEnabled="False" Click="tableauScore_Click">
                     <!--<MenuItem.Icon>
                         <Image Source="/Imagenes/database-process-icon.png" Height="20" Width="20"/>
                     </MenuItem.Icon>-->
@@ -28,14 +28,14 @@
                     </MenuItem.Icon>-->
                 </MenuItem >
                 <Separator />
-                <MenuItem Name="visualiserJoueur" Header="_Visualiser Joueur" IsEnabled="true" Click="visualiserJoueur_Click">
+                <MenuItem Name="visualiserJoueur" Header="_Visualiser Joueur" IsEnabled="False" Click="visualiserJoueur_Click">
                     <!--<MenuItem.Icon>
                         <Image Source="/Imagenes/database-process-icon.png" Height="20" Width="20"/>
                     </MenuItem.Icon>-->
                 </MenuItem >
             </MenuItem>
             <MenuItem Header="_Gestion Partie">
-                <MenuItem Name="Demarrer" Header="_Démarrer" InputGestureText="Ctrl+N" IsEnabled="True" Click="Demarrer_Click">
+                <MenuItem Name="Demarrer" Header="_Démarrer" InputGestureText="Ctrl+N" IsEnabled="False" Click="Demarrer_Click">
                     <MenuItem.Icon>
                         <Image Source="Resources/demarrer.png" Height="20" Width="20"/>
                     </MenuItem.Icon>

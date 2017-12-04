@@ -31,12 +31,13 @@ namespace JeuNombreMystere.UcGestionPartie
         {
             if(Login.Text != "" && Nom.Text != "")
             {
-                UcIdentifier ucIdentifier = new UcIdentifier();
-                if (ucIdentifier.doIt(this.listeJoueur, new Joueur(Nom.Text, Login.Text)))
+                MainWindow w = (MainWindow)Owner;
+                //UcIdentifier ucIdentifier = new UcIdentifier();
+                foreach (Joueur currentJoueur in this.listeJoueur)
                 {
-                    MainWindow w = (MainWindow)Owner;
-                    w.LancerPartie(this, new Joueur(Nom.Text, Login.Text));
-                }                   
+                    if (currentJoueur.Equals(new Joueur(Nom.Text, Login.Text)))
+                        w.LancerPartie(this, currentJoueur);
+                }
             }
             else
             {

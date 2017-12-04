@@ -12,7 +12,7 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Path=Score}" />
+                        <TextBlock Text="{Binding Path=MeilleurScore}" />
                         <TextBlock Text=" - " />
                         <TextBlock Padding="5,0,5,0" Text="{Binding Path=Nom}" />
                     </StackPanel>
