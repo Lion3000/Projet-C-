@@ -32,7 +32,6 @@ namespace JeuNombreMystere.UcGestionPartie
             if(Login.Text != "" && Nom.Text != "")
             {
                 MainWindow w = (MainWindow)Owner;
-                //UcIdentifier ucIdentifier = new UcIdentifier();
                 foreach (Joueur currentJoueur in this.listeJoueur)
                 {
                     if (currentJoueur.Equals(new Joueur(Nom.Text, Login.Text)))

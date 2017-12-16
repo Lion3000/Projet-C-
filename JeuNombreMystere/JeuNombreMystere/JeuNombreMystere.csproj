@@ -70,6 +70,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MacroDataContext.cs" />
+    <Compile Include="MacroManager.cs" />
     <Compile Include="UcAfficherListeScores\FenetreVisualisationDesScores.xaml.cs">
       <DependentUpon>FenetreVisualisationDesScores.xaml</DependentUpon>
     </Compile>
@@ -91,7 +93,6 @@
       <DependentUpon>FenetreVictoire.xaml</DependentUpon>
     </Compile>
     <Compile Include="UcGestionPartie\UcGererPartie.cs" />
-    <Compile Include="UcGestionPartie\UcIdentifier.cs" />
     <Compile Include="UcGestionPartie\VictoireEventArgs.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
