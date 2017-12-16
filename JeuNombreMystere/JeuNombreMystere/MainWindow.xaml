@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JeuNombreMystere"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="Jeu Nombre Mystère" Height="auto" Width="auto">
+    <Window.InputBindings>
+        <KeyBinding Gesture="Ctrl+N" Command="{Binding MacroManager}" CommandParameter="Ctrl+N" />
+        <KeyBinding Gesture="Ctrl+D" Command="{Binding MacroManager}" CommandParameter="Ctrl+D" />
+        <KeyBinding Gesture="Ctrl+S" Command="{Binding MacroManager}" CommandParameter="Ctrl+S" />
+    </Window.InputBindings>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Menu">
+                <MenuItem Header="_Tableau des scores" Name="tableauScore" InputGestureText="Ctrl+S" IsEnabled="False" Click="tableauScore_Click">
+                </MenuItem >
+                <Separator />
+                <MenuItem Name="quitter" Header="_Quitter" Click="quitter_Click">
+                </MenuItem >
+            </MenuItem>
+            <MenuItem Name="gestionJoueurs" Header="_Gestion Joueur">
+                <MenuItem Name="nouveauJoueur" Header="_Nouveau Joueur" InputGestureText="Ctrl+N" Click="nouveauJoueur_Click" >
+                </MenuItem >
+                <Separator />
+                <MenuItem Name="visualiserJoueur" Header="_Visualiser Joueur" IsEnabled="False" Click="visualiserJoueur_Click">
+                </MenuItem >
+            </MenuItem>
+            <MenuItem Header="_Gestion Partie">
+                <MenuItem Name="Demarrer" Header="_Démarrer" InputGestureText="Ctrl+D" IsEnabled="False" Click="Demarrer_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/demarrer.png" Height="15" Width="15"/>
+                    </MenuItem.Icon>
+                </MenuItem >
+            </MenuItem>
+        </Menu>
+        <TextBox AcceptsReturn="True" />
+    </DockPanel>
 </Window>

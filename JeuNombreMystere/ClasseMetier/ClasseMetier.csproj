@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,7 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Joueur.cs" />
-    <Compile Include="ListJoueur.cs" />
+    <Compile Include="ListeJoueur.cs" />
+    <Compile Include="ListeJoueursIsNotEmptyEventArgs.cs" />
     <Compile Include="Partie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

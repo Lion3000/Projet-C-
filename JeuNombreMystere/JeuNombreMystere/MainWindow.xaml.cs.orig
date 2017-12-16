@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using ClasseMetier;
+using JeuNombreMystere.UcGestionJoueurs;
+
+namespace JeuNombreMystere
+{
+    /// <summary>
+    /// Logique d'interaction pour MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+<<<<<<< HEAD
+         private ListeJoueur listJoueur;
+        UcGererJoueurs gererJoueurs;
+        UcGererPartie gererPartie;
+=======
+        private ListeJoueur listeJoueur;
+>>>>>>> 65f9bd9db39f50fa03e9aedd529995e0dc4379db
+        public MainWindow()
+        {
+            this.listeJoueur = new ListeJoueur();
+            this.listeJoueur.load();
+            InitializeComponent();
+            listJoueur = new ListeJoueur();
+            gererJoueurs = new UcGererJoueurs(listJoueur);            
+        }
+<<<<<<< HEAD
+        
+=======
+
+>>>>>>> 65f9bd9db39f50fa03e9aedd529995e0dc4379db
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            this.listeJoueur.save();
+        }
+
+        private void nouveauJoueur_Click(object sender, RoutedEventArgs e)
+        {
+            this.gererJoueurs.ajouterJoueur();
+        }
+
+        private void Demarrer_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void visualiserJoueur_Click(object sender, RoutedEventArgs e)
+        {
+            this.gererJoueurs.visualiserJoueur();
+        }
+    }
+}

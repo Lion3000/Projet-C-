@@ -1,0 +1,23 @@
+﻿<Window x:Class="JeuNombreMystere.UcAfficherListeScores.FenetreVisualisationDesScores"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JeuNombreMystere.UcAfficherListeScores"
+        mc:Ignorable="d"
+        Title="FenetreVisualisationDesScores" Height="300" Width="300" Loaded="Window_Loaded">
+    <StackPanel>
+        <Label Content="Classement des meilleures performances" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="25, 25, 25, 25"/>
+        <ListBox Name="listeJoueursParticipants" VerticalAlignment="Top" DockPanel.Dock="Right" Height="182"  Margin="10,0,9.6,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=MeilleurScore}" />
+                        <TextBlock Text=" - " />
+                        <TextBlock Padding="5,0,5,0" Text="{Binding Path=Nom}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</Window>
