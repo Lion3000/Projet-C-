@@ -1,17 +1,5 @@
 ﻿using ClasseMetier;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace JeuNombreMystere.UcGestionPartie
 {
@@ -31,17 +19,21 @@ namespace JeuNombreMystere.UcGestionPartie
         {
             if(Login.Text != "" && Nom.Text != "")
             {
+                bool joueurExistant = false;
                 MainWindow w = (MainWindow)Owner;
                 foreach (Joueur currentJoueur in this.listeJoueur)
                 {
                     if (currentJoueur.Equals(new Joueur(Nom.Text, Login.Text)))
+                    {
                         w.LancerPartie(this, currentJoueur);
+                        joueurExistant = true;
+                    }                    
                 }
+                if (!joueurExistant)
+                    MessageBox.Show("Joueur Inconnu, vérifiez la saisie ou créez un nouveau joueur", "Retry", MessageBoxButton.OK, MessageBoxImage.Question);
             }
             else
-            {
                 MessageBox.Show("Joueur Inconnu, vérifiez la saisie ou créez un nouveau joueur", "Retry", MessageBoxButton.OK, MessageBoxImage.Question);
-            }
         }
     }
 }

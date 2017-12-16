@@ -12,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using System.Windows.Media.Animation;
 namespace JeuNombreMystere.UcGestionPartie
 {
     /// <summary>
@@ -23,9 +23,14 @@ namespace JeuNombreMystere.UcGestionPartie
         public FenetreVictoire(Partie partie)
         {
             InitializeComponent();
-            meilleurScore.Content = "Meilleur score: " + partie.Joueur.MeilleurScore;
-            Score.Content = "Score : " + partie.NbPropositions;
-            nombrePartieJouees.Content = "Nombre de parties jouées : " + partie.Joueur.NbPartiesJouees;
+            Storyboard sb = this.FindResource("PlayAnimation") as Storyboard;
+            Storyboard.SetTarget(sb, this.victoire); 
+            sb.Begin();
+            Storyboard sb2 = this.FindResource("PlayAnimation2") as Storyboard;
+            sb2.Begin();
+            this.meilleurScore.Content = "Meilleur score: " + partie.Joueur.MeilleurScore;
+            this.Score.Content = "Score : " + partie.NbPropositions;
+            this.nombrePartieJouees.Content = "Nombre de parties jouées : " + partie.Joueur.NbPartiesJouees;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

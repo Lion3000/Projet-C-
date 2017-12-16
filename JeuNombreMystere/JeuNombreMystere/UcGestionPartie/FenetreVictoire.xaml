@@ -6,8 +6,17 @@
         xmlns:local="clr-namespace:JeuNombreMystere.UcGestionPartie"
         mc:Ignorable="d"
         Title="Victoire" Height="300" Width="300">
+
+    <Window.Resources>
+        <Storyboard x:Key="PlayAnimation" Storyboard.TargetProperty="(FontSize)">
+            <DoubleAnimation From="12" To="20" Duration="0:0:1"/>
+        </Storyboard>
+        <Storyboard x:Key="PlayAnimation2" Storyboard.TargetName="victoire" Storyboard.TargetProperty="(Foreground).(SolidColorBrush.Color)">
+            <ColorAnimation To="Green" Duration="0:0:1" AutoReverse="True" RepeatBehavior="4" />
+        </Storyboard>        
+    </Window.Resources>
     <StackPanel>
-        <Label Content="VICTOIRE" Margin="10" Width="235" FontSize="16" FontWeight="Bold" FontStyle="Italic" />
+        <Label Content="VICTOIRE" Name="victoire" Foreground="PaleTurquoise" Margin="10" Width="235" FontSize="16" FontWeight="Bold" FontStyle="Italic" />
         <DockPanel Height="40">
             <Label Name="Score" Content="" Height="40" Width="235" FontWeight="Bold" FontStyle="Italic" />
         </DockPanel>

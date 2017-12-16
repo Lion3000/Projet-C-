@@ -1,6 +1,5 @@
 ﻿using ClasseMetier;
 using System;
-
 using System.Windows;
 
 namespace JeuNombreMystere.UcGestionPartie

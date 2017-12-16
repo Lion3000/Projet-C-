@@ -13,6 +13,7 @@ nombre de coups de la partie est inférieur au score précédent, il devient le 
 * **Tableau des meilleurs scores** 
 * **Persistance des données en xml** 
 * **Macros clavier**
+* **Animation victoire**
 
 ## Auteurs
 
