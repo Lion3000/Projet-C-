@@ -35,7 +35,7 @@ namespace JeuNombreMystere.UcGestionPartie
                 }
             }
             else
-                info.Content = (Convert.ToUInt32(nombreSaisi.Text) < this.partie.NombreMystere) ? "Le nombre mystère est plus grand !" : "Le nombre mystère est plus petit !";
+                info.Content = (Convert.ToUInt32(nombreSaisi.Text) < this.partie.NombreMystere) ? "Le nombre mystère est plus grand que "+ nombreSaisi.Text + " !" : "Le nombre mystère est plus petit que " + nombreSaisi.Text + " !";
         }
     }
 }

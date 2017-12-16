@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JeuNombreMystere.UcGestionPartie"
         mc:Ignorable="d"
-        Title="FenetrePartie" Height="300" Width="300">
+        Title="FenetrePartie" Height="300" Width="430">
     <StackPanel HorizontalAlignment="Center" >
         <Label Name="info"  Content="Découvrez le nombre mystère" Margin="40" FontWeight="Bold"/>
 
-        <TextBox Height="30" TextWrapping="Wrap" Name="nombreSaisi" Text="" VerticalAlignment="Top" Width="142"/>
+        <TextBox Height="30" TextWrapping="Wrap" Name="nombreSaisi" Text="" VerticalAlignment="Top" Width="250"/>
         <Button x:Name="valider" Content="Valider" Width="60" Margin="50" Click="valider_Click"/>
 
     </StackPanel>

@@ -9,7 +9,7 @@
     <StackPanel>
         <Label Content="VICTOIRE" Margin="10" Width="235" FontSize="16" FontWeight="Bold" FontStyle="Italic" />
         <DockPanel Height="40">
-          <Label Name="Score" Content="" Height="40" Width="235" FontWeight="Bold" FontStyle="Italic" />
+            <Label Name="Score" Content="" Height="40" Width="235" FontWeight="Bold" FontStyle="Italic" />
         </DockPanel>
         <DockPanel>
             <Label Name="meilleurScore" Content="" Width="235"/>
