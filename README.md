@@ -18,4 +18,4 @@ nombre de coups de la partie est inférieur au score précédent, il devient le 
 ## Auteurs
 
 * **Alex Zarzitski** 
-* **Camèlia Zarzitski Benhmida** 
+* **Camélia Zarzitski Benhmida** 
