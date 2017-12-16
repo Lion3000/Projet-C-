@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using ClasseMetier;
+using System.Windows.Input;
 
 namespace JeuNombreMystere
 {
@@ -20,9 +21,11 @@ namespace JeuNombreMystere
         public MainWindow()
         {
             this.ListeJoueur = new ListeJoueur();
-            this.ListeJoueur.load();
-
             InitializeComponent();
+            DataContext = new MacroDataContext(this);
+            this.subscribe(this.ListeJoueur);
+            this.ListeJoueur.load();            
+           
             this.gererJoueurs = new UcGestionJoueurs.UcGererJoueurs();
             this.afficherListeScores = new UcAfficherListeScores.UcAfficherListeScores();
         }
@@ -33,12 +36,12 @@ namespace JeuNombreMystere
             this.ListeJoueur.save();
         }
 
-        private void nouveauJoueur_Click(object sender, RoutedEventArgs e)
+        public void nouveauJoueur_Click(object sender, RoutedEventArgs e)
         {
             this.gererJoueurs.ajouterJoueur(this);
         }
 
-        private void Demarrer_Click(object sender, RoutedEventArgs e)
+        public void Demarrer_Click(object sender, RoutedEventArgs e)
         {
             UcGestionPartie.FenetreIdentification fenetreIdentification = new UcGestionPartie.FenetreIdentification(this.listeJoueur);
             fenetreIdentification.Owner = this;
@@ -55,14 +58,26 @@ namespace JeuNombreMystere
             this.gererJoueurs.visualiserJoueur(this);
         }
 
-        private void quitter_Click(object sender, RoutedEventArgs e)
+        public void quitter_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void tableauScore_Click(object sender, RoutedEventArgs e)
+        public void tableauScore_Click(object sender, RoutedEventArgs e)
         {
             afficherListeScores.doIt(this);
         }
+        public void subscribe(ListeJoueur listeJoueur)
+        {
+            listeJoueur.notEmpty += new ListeJoueur.NotEmptyHandler(onListeJoueurNotEmpty);
+        }
+        public void onListeJoueurNotEmpty(object sender, ListeJoueursIsNotEmptyEventArgs e)
+        {
+            tableauScore.IsEnabled = true;
+            Demarrer.IsEnabled = true;
+            visualiserJoueur.IsEnabled = true;
+        }
+
     }
+
 }

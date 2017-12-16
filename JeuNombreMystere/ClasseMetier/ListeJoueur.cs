@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using JeuNombreMystere;
+using System.Collections.Generic;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
@@ -7,6 +8,9 @@ namespace ClasseMetier
 {
     public class ListeJoueur : List<Joueur>, IComparer<Joueur>
     {
+        public event NotEmptyHandler notEmpty;
+        public delegate void NotEmptyHandler(object sender, ListeJoueursIsNotEmptyEventArgs e);
+        public ListeJoueursIsNotEmptyEventArgs e = null;
 
         public int Compare(Joueur x, Joueur y)
         {
@@ -30,6 +34,12 @@ namespace ClasseMetier
             }
 
             sw.Close();
+        }
+
+        public new void Add(Joueur joueur)
+        {
+            base.Add(joueur);
+            this.startListeJoueursIsNotEmptyEvent();
         }
 
         public void load()
@@ -60,10 +70,23 @@ namespace ClasseMetier
                         }
                     }
                 }
+                this.startListeJoueursIsNotEmptyEvent();
             }
             catch (FileNotFoundException e)
             {
 
+            }
+        }
+
+        private void startListeJoueursIsNotEmptyEvent()
+        {
+            if (this.Count > 0)
+            {
+                if (notEmpty != null)
+                {
+                    e = new ListeJoueursIsNotEmptyEventArgs(this.Count);
+                    notEmpty(this, e);
+                }
             }
         }
     }

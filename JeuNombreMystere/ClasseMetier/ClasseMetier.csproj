@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Joueur.cs" />
     <Compile Include="ListeJoueur.cs" />
+    <Compile Include="ListeJoueursIsNotEmptyEventArgs.cs" />
     <Compile Include="Partie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
